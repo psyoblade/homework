@@ -66,11 +66,11 @@ def main():
         print('mean return', np.mean(returns))
         print('std of return', np.std(returns))
 
-        expert_data = {'observations': np.array(observations),
+        experts = {'observations': np.array(observations),
                        'actions': np.array(actions)}
 
-        with open(os.path.join('expert_data', args.envname + '.pkl'), 'wb') as f:
-            pickle.dump(expert_data, f, pickle.HIGHEST_PROTOCOL)
+        with open(os.path.join('experts', args.envname + '.pkl'), 'wb') as f:
+            pickle.dump(experts, f, pickle.HIGHEST_PROTOCOL)
 
 if __name__ == '__main__':
     main()
